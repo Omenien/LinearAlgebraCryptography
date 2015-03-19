@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Linear Algebra Crypto:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Linear_Algebra_Crypto_jar</output-path>
+    <root id="archive" name="Linear Algebra Crypto.jar">
+      <element id="module-output" name="Linear Algebra Crypto" />
+    </root>
+  </artifact>
+</component>
