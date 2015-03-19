@@ -1,8 +1,14 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="Linear Algebra Crypto:jar">
+  <artifact name="Linear Algebra Crypto:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/Linear_Algebra_Crypto_jar</output-path>
-    <root id="archive" name="Linear Algebra Crypto.jar">
-      <element id="module-output" name="Linear Algebra Crypto" />
+    <root id="root">
+      <element id="archive" name="Linear Algebra Crypto.jar">
+        <element id="module-output" name="Linear Algebra Crypto" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/lib/darcula.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/lib/commons-math3-3.4.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/lib/commons-lang3-3.3.2.jar" path-in-jar="/" />
+        <element id="dir-copy" path="$PROJECT_DIR$/resources" />
+      </element>
     </root>
   </artifact>
 </component>
