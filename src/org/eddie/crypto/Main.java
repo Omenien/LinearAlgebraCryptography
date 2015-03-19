@@ -5,7 +5,6 @@ import org.apache.commons.math3.fraction.FractionFormat;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Arrays;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
@@ -137,10 +136,10 @@ public class Main extends Component
                     if(!keyMatrix.isInvertible())
                     {
                         outputStringTextArea.setText("Unable to invert key matrix.");
-                        
+
                         return;
                     }
-                    
+
                     StringBuilder stringBuilder = new StringBuilder(inputStringTextArea.getText());
 
                     int remainder = 3 - (stringBuilder.toString().length() % 3);
@@ -151,7 +150,7 @@ public class Main extends Component
                     }
 
                     String inputString = stringBuilder.toString();
-                    
+
                     int[] characterNumberArray = new int[inputString.length()];
 
                     int pos = 0;
@@ -173,23 +172,23 @@ public class Main extends Component
                     int columnCount = inputString.length() / 3;
 
                     int[][] stringIntMatrix = new int[3][columnCount];
-                    
+
                     pos = 0;
-                    
+
                     for(int column = 0; column < columnCount; column++)
                     {
                         for(int row = 0; row < 3; row++)
                         {
                             stringIntMatrix[row][column] = characterNumberArray[pos];
-                            
+
                             pos++;
                         }
                     }
-                    
+
                     Matrix stringMatrix = new Matrix(stringIntMatrix);
-                    
+
                     Matrix output = keyMatrix.multiplyByMatrix(stringMatrix);
-                    
+
                     outputStringTextArea.setText(output.toString());
                 }
                 break;
@@ -198,13 +197,5 @@ public class Main extends Component
                 System.out.println("No case for tab number " + tabNumber);
                 break;
         }
-    }
-
-    protected void showErrorPane(String title, String msg)
-    {
-        JOptionPane pane = new JOptionPane(msg, JOptionPane.ERROR_MESSAGE);
-        JDialog dialog = pane.createDialog("Application says: " + title);
-        dialog.setAlwaysOnTop(true);
-        dialog.setVisible(true);
     }
 }

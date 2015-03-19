@@ -107,7 +107,7 @@ public class Matrix
         if(columnCount != b.rowCount)
         {
             System.out.println("Unable to multiply matrices, matrix A has " + columnCount + " columns and matrix B has  " + b.rowCount + " rows.");
-            
+
             return null;
         }
 
@@ -115,11 +115,11 @@ public class Matrix
 
         double sum = 0.0;
 
-        for (int c = 0 ; c < rowCount ; c++ )
+        for(int c = 0; c < rowCount; c++)
         {
-            for (int d = 0 ; d < b.columnCount ; d++ )
+            for(int d = 0; d < b.columnCount; d++)
             {
-                for (int k = 0 ; k < b.rowCount ; k++ )
+                for(int k = 0; k < b.rowCount; k++)
                 {
                     sum = sum + matrix.get(c).get(k).doubleValue() * b.matrix.get(k).get(d).doubleValue();
                 }
