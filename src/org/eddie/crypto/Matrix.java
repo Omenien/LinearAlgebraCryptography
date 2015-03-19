@@ -12,7 +12,6 @@ public class Matrix
     int rowCount;
     int columnCount;
 
-    @SuppressWarnings("unused")
     public Matrix(double[][] matrixArray)
     {
         constructFromArray(matrixArray);
@@ -258,17 +257,17 @@ public class Matrix
         }
     }
 
-    public double determinant(double[][] A, int numElements)
+    public double determinant(double[][] inputArray, int numElements)
     {
         double det;
 
         if(numElements == 1)
         {
-            det = A[0][0];
+            det = inputArray[0][0];
         }
         else if(numElements == 2)
         {
-            det = A[0][0] * A[1][1] - A[1][0] * A[0][1];
+            det = inputArray[0][0] * inputArray[1][1] - inputArray[1][0] * inputArray[0][1];
         }
         else
         {
@@ -289,11 +288,11 @@ public class Matrix
                         {
                             continue;
                         }
-                        m[i - 1][j2] = A[i][j];
+                        m[i - 1][j2] = inputArray[i][j];
                         j2++;
                     }
                 }
-                det += Math.pow(-1.0, 1.0 + j1 + 1.0) * A[0][j1] * determinant(m, numElements - 1);
+                det += Math.pow(-1.0, 1.0 + j1 + 1.0) * inputArray[0][j1] * determinant(m, numElements - 1);
             }
         }
         return det;
